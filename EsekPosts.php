@@ -42,7 +42,6 @@ class EsekPosts
 		$table = "<table class=\"wikitable\">";
 		$table .= "<tr>";
 		$table .= "<th>Postnamn</th>";
-		$table .= "<th>Utskott</th>";
 		$table .= "<th>Start</th>";
 		$table .= "<th>Slut</th>";
 		$table .= "</tr>";
@@ -52,7 +51,6 @@ class EsekPosts
 
 			$table .= "<tr>";
 			$table .= "<td><a href=\"$post_url\">" . $post['name'] . "</a></td>";
-			$table .= "<td>" . $post['utskott'] . "</td>";
 			$table .= "<td>" . $post['start'] . "</td>";
 			$table .= "<td>" . $post['end'] . "</td>";
 			$table .= "</tr>";

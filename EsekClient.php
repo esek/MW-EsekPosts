@@ -6,7 +6,6 @@ const USER_QUERY = "
 			postHistory {
 				post {
 					postname
-					utskott
 				}
 				start
 				end
@@ -76,7 +75,6 @@ class EsekClient
 				return [
 					'id' => $post['post']['id'],
 					'name' => $post['post']['postname'],
-					'utskott' => $post['post']['utskott'],
 					'start' => $post['start'],
 					'end' => $post['end'],
 				];
