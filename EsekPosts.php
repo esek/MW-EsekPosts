@@ -1,5 +1,7 @@
 <?php
 
+require_once(__DIR__ . '/EsekClient.php');
+
 class EsekPosts
 {
 	const TAG_NAME = 'Posts';
@@ -18,14 +20,45 @@ class EsekPosts
 			return '';
 		}
 
-
 		$username = htmlspecialchars($input);
 
-		return "<p>Denna funktionalitet har flyttat <a href=\"https://esek.se/member/@$username\" target=\"_blank\">hit!</a></p>";
+		$postsTable = self::fetchPosts($username);
+
+		return $postsTable;
+
+		// return "<p>Denna funktionalitet har flyttat <a href=\"https://esek.se/member/@$username\" target=\"_blank\">hit!</a></p>";
 	}
 
-	public static function fetchPosts()
+	private static function fetchPosts(string $username)
 	{
-		// TODO: Fetch the actual posts
+		$client = new EsekClient();
+		$posts = $client->getPostsForUser($username);
+
+		$table = self::createTableFromPosts($posts);
+
+		return $table;
+	}
+
+	private static function createTableFromPosts(array $posts)
+	{
+		$table = "<table class=\"wikitable\">";
+		$table .= "<tr>";
+		$table .= "<th>Postnamn</th>";
+		$table .= "<th>Start</th>";
+		$table .= "<th>Slut</th>";
+		$table .= "</tr>";
+
+		foreach ($posts as $post) {
+			$url = "https://esek.se/member/posts/" . $post['id'];
+
+			$table .= "<tr>";
+			$table .= "<td><a href=\"$url\"> target=\"_blank\"" . $post['name'] . "</a></td>";
+			$table .= "<td>" . $post['start'] . "</td>";
+			$table .= "<td>" . $post['end'] . "</td>";
+			$table .= "</tr>";
+		}
+
+		$table .= "</table>";
+		return $table;
 	}
 }
