@@ -71,6 +71,8 @@ class EsekClient
 			$response = $this->_makeRequest($query, $variables);
 			$history = $response['data']['user']['postHistory'];
 
+			echo $history;
+
 			return array_map(function ($post) {
 				return [
 					'id' => $post['post']['id'],
