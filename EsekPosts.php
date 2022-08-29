@@ -13,9 +13,6 @@ class EsekPosts
 
 	public static function renderPosts($input, array $args, Parser $parser, PPFrame $frame)
 	{
-		// disable the cache for this extension
-		$parser->disableCache();
-
 		// if no STIL-ID, don't return anything
 		if (empty($input)) {
 			return '';
