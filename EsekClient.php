@@ -5,8 +5,8 @@ const USER_QUERY = "
 		user(username:\$username) {
 			postHistory {
 				post {
-					id
 					postname
+					utskott
 				}
 				start
 				end
@@ -48,6 +48,7 @@ class EsekClient
 
 		$data = json_encode($data);
 		$ch = curl_init($url);
+
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($ch, CURLOPT_POST, 1);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -75,6 +76,7 @@ class EsekClient
 				return [
 					'id' => $post['post']['id'],
 					'name' => $post['post']['postname'],
+					'utskot' => $post['post']['utskott'],
 					'start' => $post['start'],
 					'end' => $post['end'],
 				];
