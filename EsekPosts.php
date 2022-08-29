@@ -21,7 +21,7 @@ class EsekPosts
 
 		$username = htmlspecialchars($input);
 
-		return "<p>Denna funktionalitet har flyttat <a href=\"https://esek.se/members/@$username\" target=\"_blank\">hit!</a></p>";
+		return "<p>Denna funktionalitet har flyttat <a href=\"https://esek.se/member/@$username\" target=\"_blank\">hit!</a></p>";
 	}
 
 	public static function fetchPosts()
