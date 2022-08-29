@@ -48,7 +48,7 @@ class EsekPosts
 		$table .= "</tr>";
 
 		foreach ($posts as $post) {
-			$post_url = "/" . $post['name'];
+			$post_url = "/index.php/" . $post['name'];
 
 			$table .= "<tr>";
 			$table .= "<td><a href=\"$post_url\">" . $post['name'] . "</a></td>";
