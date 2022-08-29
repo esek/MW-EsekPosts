@@ -76,7 +76,7 @@ class EsekClient
 				return [
 					'id' => $post['post']['id'],
 					'name' => $post['post']['postname'],
-					'utskot' => $post['post']['utskott'],
+					'utskott' => $post['post']['utskott'],
 					'start' => $post['start'],
 					'end' => $post['end'],
 				];
