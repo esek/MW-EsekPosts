@@ -37,7 +37,7 @@ class EsekClient
 		$url = $this->URL;
 
 		$headers = [
-			'Authorization: Bearer ' . $this->API_KEY,
+			'X-E-Api-Key: ' . $this->API_KEY,
 			'Content-Type: application/json',
 		];
 
