@@ -23,10 +23,10 @@ class EsekClient
 
 	function __construct()
 	{
-		global $wgOAuth2Client;
+		global $wgEsek;
 
-		$this->URL = $wgOAuth2Client['esek']['ekorre_url'];
-		$this->API_KEY = $wgOAuth2Client['esek']['ekorre_api_key'];
+		$this->URL = $wgEsek['ekorre_url'];
+		$this->API_KEY = $wgEsek['ekorre_api_key'];
 	}
 
 	/**
