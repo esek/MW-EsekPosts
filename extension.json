@@ -1,0 +1,19 @@
+{
+  "name": "MW-EsekPosts",
+  "version": "0.1",
+  "author": ["[https://esek.se Axel Froborg]"],
+  "url": "https://github.com/esek/MW-EsekPosts",
+  "descriptionmsg": "",
+  "license-name": "MIT",
+  "type": "other",
+  "AutoloadClasses": {
+    "EsekPosts": "EsekPosts.php"
+  },
+  "Hooks": {
+    "ParserFirstCallInit": ["EsekPosts::onParserFirstCallInit"]
+  },
+  "MessagesDirs": {
+    "MyExtension": ["i18n"]
+  },
+  "manifest_version": 1
+}
