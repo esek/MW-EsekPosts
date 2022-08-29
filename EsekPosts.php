@@ -34,6 +34,8 @@ class EsekPosts
 		$client = new EsekClient();
 		$posts = $client->getPostsForUser($username);
 
+		echo $posts;
+
 		$table = self::createTableFromPosts($posts);
 
 		return $table;
