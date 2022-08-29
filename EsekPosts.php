@@ -34,8 +34,6 @@ class EsekPosts
 		$client = new EsekClient();
 		$posts = $client->getPostsForUser($username);
 
-		echo $posts;
-
 		$table = self::createTableFromPosts($posts);
 
 		return $table;
@@ -54,7 +52,7 @@ class EsekPosts
 			$url = "https://esek.se/member/posts/" . $post['id'];
 
 			$table .= "<tr>";
-			$table .= "<td><a href=\"$url\"> target=\"_blank\"" . $post['name'] . "</a></td>";
+			$table .= "<td><a href=\"$url\" target=\"_blank\">" . $post['name'] . "</a></td>";
 			$table .= "<td>" . $post['start'] . "</td>";
 			$table .= "<td>" . $post['end'] . "</td>";
 			$table .= "</tr>";
