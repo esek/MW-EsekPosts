@@ -33,7 +33,7 @@ class EsekPosts
 		$posts = $client->getPostsForUser($username);
 
 		if (count($posts) == 0) {
-			return "<p>$username har inte haft några poster ännu...</p>";
+			return "<p>Denna användaren har inte haft några poster ännu...</p>";
 		}
 
 		$table = self::createTableFromPosts($posts);
