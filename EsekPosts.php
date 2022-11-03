@@ -43,7 +43,7 @@ class EsekPosts
 
 	private static function createTableFromPosts(array $posts)
 	{
-		$table = "<table class=\"wikitable\">";
+		$table = "<table class=\"wikitable esek-table esek-posts\">";
 		$table .= "<tr>";
 		$table .= "<th>Postnamn</th>";
 		$table .= "<th>Start</th>";
