@@ -77,7 +77,6 @@ class EsekClient
 
 			return array_map(function ($post) {
 				return [
-					'id' => $post['post']['id'],
 					'name' => $post['post']['postname'],
 					'start' => $post['start'],
 					'end' => $post['end'],
