@@ -69,7 +69,7 @@ class EsekClient
 
 		try {
 			$response = $this->_makeRequest($query, $variables);
-			$history = $response['data']['user']['postHistory'];
+			$history = $response['data']['user']['postHistory'] ?? null;
 
 			if (!is_array($history)) {
 				return [];
